@@ -30,7 +30,7 @@ const Reset = (props) => {
     if (newPassword.length > 0) {
       setMessage({ type: "", message: "" });
       if (newPassword === confirmNewPassword) {
-        setMessage({ type: "", message: "" });
+        setMessage({ type: "green", message: "Loading...." });
         let res = await resetPassword({
           newPassword,
           id: props.match.params.id,

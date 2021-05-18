@@ -33,12 +33,14 @@ const Login = (props) => {
       if (formData.password.length > 0) {
         setMessage({ type: "", message: "" });
         if (whatKind === "/login") {
+          setMessage({ type: "green", message: "Loading...." });
           let res = await login(formData);
           setMessage({
             type: res.loggedIn ? "green" : "red",
             message: res.message,
           });
         } else {
+          setMessage({ type: "green", message: "Loading...." });
           let res = await signup(formData);
           setMessage({
             type: res.signup ? "green" : "red",
